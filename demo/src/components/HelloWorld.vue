@@ -2,6 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Hello World</h2>
+    <p>innerState: {{innerState}}</p>
+    <a-button @click="++innerState">change innerState</a-button>
   </div>
 </template>
 
@@ -9,6 +11,12 @@
 export default {
   name: 'HelloWorld',
   props: ['msg'],
+  data(){
+    return {
+      innerState: 1 
+    }
+  },
+
 }
 </script>
 

@@ -9,7 +9,7 @@ export default {
       },
       unbind: function (el, binding, vnode) {
         if(!el.parentNode && !el.parentElement) {
-          binding.value(undefined, vnode.key)
+          binding.value(null, vnode.key)
         }
       },
     })

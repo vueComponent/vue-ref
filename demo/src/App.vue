@@ -47,19 +47,10 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$refs.spanList)
-    console.log(this.img === this.$refs.img)
-    console.log(this.helloWorld === this.$refs.helloWorld)
-    console.log(this.button === this.$refs.button)
-    console.log(this.scrollbar === this.$refs.scrollbar)
-    console.log(this.functional === this.$refs.functional, this.$refs.functional, this.functional)
+    this.refsLog()
   },
   updated() {
-    console.log(this.img === this.$refs.img)
-    console.log(this.helloWorld === this.$refs.helloWorld)
-    console.log(this.button === this.$refs.button)
-    console.log(this.scrollbar === this.$refs.scrollbar)
-    console.log(this.functional === this.$refs.functional)
+    this.refsLog()
   },
   methods: {
   	onEnter() {
@@ -70,6 +61,17 @@ export default {
     },
     updateMsg(){
       this.msg = Date.now()
+    },
+    refsLog(){
+      console.log(this.$refs.spanList)
+      console.log(this.img === this.$refs.img)
+      console.log(this.helloWorld === this.$refs.helloWorld)
+      if(this.helloWorld !== this.$refs.helloWorld) {
+        console.log(this.helloWorld, this.$refs.helloWorld)
+      }
+      console.log(this.button === this.$refs.button)
+      console.log(this.scrollbar === this.$refs.scrollbar)
+      console.log(this.functional === this.$refs.functional, this.$refs.functional, this.functional)
     }
   }
 }

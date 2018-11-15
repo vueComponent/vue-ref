@@ -1,6 +1,6 @@
 {
     "name": "vue-ref",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Vue Ref",
     "description": "use the callback to get a reference like react",
     "keywords": [
