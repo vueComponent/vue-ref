@@ -5,12 +5,12 @@ You can use the callback to get a reference like react.
 $ npm install vue-ref --save
 ```
 
-```
+```js
 import ref from 'vue-ref'
 Vue.use(ref)
 ```
 
-```
+```html
 <!-- vm.dom will be the DOM node -->
 <p v-ref="c => this.dom = c">hello</p>
 
