@@ -1,6 +1,8 @@
 # vue-ref
 You can use the callback to get a reference like react.
 
+[![NPM version](https://img.shields.io/npm/v/vue-ref.svg?style=flat)](https://npmjs.org/package/vue-ref) [![NPM downloads](http://img.shields.io/npm/dm/vue-ref.svg?style=flat)](https://npmjs.org/package/vue-ref)
+
 ```bash
 $ npm install vue-ref --save
 ```
