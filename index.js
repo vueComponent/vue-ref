@@ -1,5 +1,10 @@
-module.exports = {
-  install: function install(Vue) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = {
+	install: function install(Vue) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
     Vue.directive(options.name || 'ref', {
@@ -10,9 +15,9 @@ module.exports = {
         binding.value(vnode.componentInstance || el, vnode.key);
       },
       unbind: function unbind(el, binding, vnode) {
-        if (!el.parentNode && !el.parentElement) {
+        Vue.nextTick(function(){
           binding.value(null, vnode.key);
-        }
+        })
       }
     });
   }
