@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
   install: function install(Vue) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var directiveName = options.name || 'ref'
+    var directiveName = options.name || 'ref';
     Vue.directive(directiveName, {
       bind: function bind(el, binding, vnode) {
         binding.value(vnode.componentInstance || el, vnode.key);
