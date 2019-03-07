@@ -29,9 +29,7 @@ exports.default = {
         }
       },
       unbind: function unbind(el, binding, vnode) {
-        Vue.nextTick(function () {
-          binding.value(null, vnode.key);
-        });
+        binding.value(null, vnode.key);
       }
     });
   }
