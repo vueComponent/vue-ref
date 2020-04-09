@@ -5,15 +5,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
   install: function install(Vue) {
-    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var directiveName = options.name || 'ref';
+    var options =
+      arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var directiveName = options.name || "ref";
     Vue.directive(directiveName, {
       bind: function bind(el, binding, vnode) {
+        Vue.nextTick(function() {
+          binding.value(vnode.componentInstance || el, vnode.key);
+        });
         binding.value(vnode.componentInstance || el, vnode.key);
       },
       update: function update(el, binding, vnode, oldVnode) {
         if (oldVnode.data && oldVnode.data.directives) {
-          var oldBinding = oldVnode.data.directives.find(function (directive) {
+          var oldBinding = oldVnode.data.directives.find(function(directive) {
             var name = directive.name;
             return name === directiveName;
           });
@@ -24,7 +28,10 @@ exports.default = {
           }
         }
         // Should not have this situation
-        if (vnode.componentInstance !== oldVnode.componentInstance || vnode.elm !== oldVnode.elm) {
+        if (
+          vnode.componentInstance !== oldVnode.componentInstance ||
+          vnode.elm !== oldVnode.elm
+        ) {
           binding.value(vnode.componentInstance || el, vnode.key);
         }
       },
